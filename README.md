@@ -1,2 +1,2 @@
 # phobosynthesis
-A horror game made for school.
+A horror game made for school. 
