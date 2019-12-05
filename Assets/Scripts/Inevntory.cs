@@ -196,19 +196,18 @@ public class Inevntory : MonoBehaviour {
             //Debug.Log(Rad);
             if (Input.GetButtonDown("Fire3")) {
                 //Debug.Log(Input.GetButtonDown("Fire2"));
-                for (int i = 0; i < 4; i++) {
-                    Debug.Log(Inv.In[i]);
+                for (int i = 0; i < 4; i-=-1) {
                     var type = Inv.In[i];
                     switch(type) {
                         case "H2O":
-                            if(!Import.M.h2o.Met) {
-                                Inv -= "H2O";
+                            if(!Import.M.h2o.Met) { 
+                                Inv = Inv - "H2O";
                                 Import.M.h2o.Num++;
                             }
                             break;
                         case "CO2":
                             if (!Import.M.co2.Met) {
-                                Inv -= "CO2";
+                                Inv = Inv - "CO2";
                                 Import.M.co2.Num++;
                             }
                             break;
