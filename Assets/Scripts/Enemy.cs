@@ -6,19 +6,21 @@ using Classes;
 using System.Collections;
 
 public class Enemy : MonoBehaviour {
+    #region Vars
     private bool beingHandled = false;
     private NavMeshAgent Agent;
     public AudioSource ChaseMusic;
     public float RadiusToChase;
     public float RadiusToMarker;
-    private Choice<string> States = new Choice<string>(new string[3] {"Idle","Patrol","Chase"},0);
+    private Choice<string> States = new Choice<string>(new string[3] {"Idle","Patrol","Chase"},1);
     public GameObject Player;
     public GameObject[] Markers;
     private Choice<GameObject> Marker;
+    #endregion Vars
 
     // Start is called before the first frame update
     void Start() {
-        Marker = new Choice<GameObject>(Markers,0);
+        Marker = new Choice<GameObject>(Markers);
         Agent = gameObject.GetComponent<NavMeshAgent>();
     }
 
@@ -27,9 +29,10 @@ public class Enemy : MonoBehaviour {
 #if NERF
         Debug.Log(Vector3.Distance(gameObject.transform.position,Player.transform.position));
 #endif
+        #region Handle States
         switch(States.Get) {
             case "Patrol":
-                if (!beingHandled) {
+                //if (!beingHandled) {
                     GameObject[] objs = GameObject.FindGameObjectsWithTag("Player");
                     foreach (GameObject i in objs) {
                         if ((gameObject.transform.position - i.transform.position).magnitude < RadiusToChase) {
@@ -38,17 +41,18 @@ public class Enemy : MonoBehaviour {
                     }
                     GameObject[] objz = GameObject.FindGameObjectsWithTag("Marker");
                     foreach (GameObject i in objz) {
-                        if ((gameObject.transform.position - i.transform.position).magnitude < RadiusToMarker && i == Marker.Get) {
+                        if (Vector3.Distance(gameObject.transform.position,i.transform.position) < RadiusToMarker && i == Marker.Get) {
+                            Debug.Log("weeeeeee");
                             Marker.choice++;
-                            States.choice = 0;
+                            //States.choice = 0;
                         }
                     }
                     this.SetDestination(Marker.Get.transform.position);
-                }
+                //}
                 break;
             case "Idle":
-                if (ChaseMusic.isPlaying) ChaseMusic.Stop();
-                if (!beingHandled) StartCoroutine(HandleIt());
+                if (ChaseMusic.isPlaying) { ChaseMusic.Stop(); }
+                //if (!beingHandled) StartCoroutine(HandleIt());
                 Agent.speed = 2;
                 //States.choice = 1;
                 break;
@@ -59,11 +63,12 @@ public class Enemy : MonoBehaviour {
                 GameObject[] objss = GameObject.FindGameObjectsWithTag("Player");
                 foreach (GameObject i in objss) {
                     if (!((gameObject.transform.position - i.transform.position).magnitude < RadiusToChase)) {
-                        States.choice = 0;
+                        States.choice = 1;
                     }
                 }
                 break;
         }
+        #endregion Handle States
     }
 
     private IEnumerator HandleIt() {
