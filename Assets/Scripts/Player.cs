@@ -24,11 +24,11 @@ public class Player : MonoBehaviour {
         Trans.position += Trans.forward * (Input.GetAxis("Vertical") / 18);
         Trans.position += Trans.right * (Input.GetAxis("Horizontal") / 18);
         //running
-        if(Input.GetButton("Fire3")&&Input.GetAxis("Vertical")!=0&&Stamina>0) {
+        if(Input.GetButton("Run")&&Input.GetAxis("Vertical")!=0&&Stamina>0) {
             Trans.position += Trans.forward * (Input.GetAxis("Vertical") / 18);
             Trans.position += Trans.forward * (Input.GetAxis("Vertical") / 18);
             Stamina -= RidStamina;
-        } else if (Stamina<MaxStamina) {
+        } else if (Stamina<MaxStamina&&!Input.GetButton("Run")) {
             Stamina += GainStamina;
         }
         //make sound on move

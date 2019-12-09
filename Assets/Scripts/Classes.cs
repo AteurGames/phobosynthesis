@@ -14,6 +14,10 @@ namespace Classes {
         }
         public T[] choices;
         private int choiceee;
+        public Choice(T[] choicess) {
+            choices = choicess;
+            choice = 0;
+        }
         public Choice(T[] choicess, int choicee) {
             choices = choicess;
             choice = choicee;
