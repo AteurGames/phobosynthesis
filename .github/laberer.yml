@@ -1,0 +1,7 @@
+programming:
+  - Assets/Scripts/*
+art:
+  - Assets/Materials/*
+documentation:
+  - README.md
+  - LICENSE
