@@ -31,7 +31,7 @@ public class Player : MonoBehaviour {
         } else if (Stamina<MaxStamina&&!Input.GetButton("Run")) {
             Stamina += GainStamina;
         }
-        //make sound on move
+        //make sound on move 
         if (Input.GetAxis("Horizontal") != 0 || Input.GetAxis("Vertical") != 0) Walking = true; else Walking = false;
         if (Walking&&!WalkSound.isPlaying) WalkSound.Play(); else WalkSound.Pause();
         //flashlight

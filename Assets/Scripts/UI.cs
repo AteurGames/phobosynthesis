@@ -16,7 +16,7 @@ public class UI : MonoBehaviour {
     }
 
     // Update is called once per frame
-    void Update() {
+    void Update() { 
         StaminaText.GetComponent<TextMeshProUGUI>().text = "Stamina: "+Math.Round(PlayerScript.Stamina);
     }
     public void AddCO2() {

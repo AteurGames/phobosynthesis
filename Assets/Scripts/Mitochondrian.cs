@@ -9,6 +9,6 @@ public class Mitochondrian : MonoBehaviour {
     void Update() {
         M.Respirate(M.co2,M.h2o);
         Co2Text.text = $"CO2: {M.co2.Num}/6";
-        H2oText.text = $"H2O: {M.h2o.Num}/12";
+        H2oText.text = $"H2O: {M.h2o.Num}/12"; 
     }
 }

@@ -240,7 +240,7 @@ public class Inevntory : MonoBehaviour {
             }
         }
         return Rad;
-    }
+    } 
 
     private void UpdateInventory(Inventory Inve) {
         string[] I = Inve.In;

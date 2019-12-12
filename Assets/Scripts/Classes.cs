@@ -7,7 +7,7 @@ namespace Classes {
             get => choiceee;
             set {
                 choiceee = value;
-                if (choiceee > choices.Length-1) {
+                if (choiceee  > choices.Length-1) {
                     choiceee = choices.Length - choiceee;
                 }
             }

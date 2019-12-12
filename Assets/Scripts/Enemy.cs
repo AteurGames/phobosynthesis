@@ -1,4 +1,4 @@
-﻿//#define NERF
+﻿#define NERF
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.SceneManagement;
@@ -10,6 +10,7 @@ public class Enemy : MonoBehaviour {
     private bool beingHandled = false;
     private NavMeshAgent Agent;
     public AudioSource ChaseMusic;
+    public AudioSource ChaseEndMusic;
     public float RadiusToChase;
     public float RadiusToMarker;
     private Choice<string> States = new Choice<string>(new string[3] {"Idle","Patrol","Chase"},1);
@@ -18,7 +19,7 @@ public class Enemy : MonoBehaviour {
     private Choice<GameObject> Marker;
     #endregion Vars
 
-    // Start is called before the first frame update
+    // Start is called before the first frame update 
     void Start() {
         Marker = new Choice<GameObject>(Markers);
         Agent = gameObject.GetComponent<NavMeshAgent>();
@@ -32,8 +33,9 @@ public class Enemy : MonoBehaviour {
         #region Handle States
         switch(States.Get) {
             case "Patrol":
+                if (ChaseMusic.isPlaying) { ChaseMusic.Stop(); ChaseEndMusic.Play(); }
                 //if (!beingHandled) {
-                    GameObject[] objs = GameObject.FindGameObjectsWithTag("Player");
+                GameObject[] objs = GameObject.FindGameObjectsWithTag("Player");
                     foreach (GameObject i in objs) {
                         if ((gameObject.transform.position - i.transform.position).magnitude < RadiusToChase) {
                             States.choice = 2;
@@ -57,7 +59,7 @@ public class Enemy : MonoBehaviour {
                 //States.choice = 1;
                 break;
             case "Chase":
-                if (!ChaseMusic.isPlaying) ChaseMusic.Play();
+                if (!ChaseMusic.isPlaying) ChaseMusic.Play(); ChaseEndMusic.Stop();
                 this.SetDestination(Player.transform.position);
                 Agent.speed = 3;
                 GameObject[] objss = GameObject.FindGameObjectsWithTag("Player");
