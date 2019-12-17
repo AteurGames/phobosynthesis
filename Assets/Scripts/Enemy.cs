@@ -61,7 +61,7 @@ public class Enemy : MonoBehaviour {
             case "Chase":
                 if (!ChaseMusic.isPlaying) ChaseMusic.Play(); ChaseEndMusic.Stop();
                 this.SetDestination(Player.transform.position);
-                Agent.speed = 3;
+                Agent.speed = 4;
                 GameObject[] objss = GameObject.FindGameObjectsWithTag("Player");
                 foreach (GameObject i in objss) {
                     if (!((gameObject.transform.position - i.transform.position).magnitude < RadiusToChase)) {
