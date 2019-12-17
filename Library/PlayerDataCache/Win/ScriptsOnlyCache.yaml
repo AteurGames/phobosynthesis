@@ -75,21 +75,21 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 11018}
     - Class: 114
-      Script: {instanceID: 11152}
+      Script: {instanceID: 11154}
     - Class: 114
-      Script: {instanceID: 11264}
+      Script: {instanceID: 11266}
     - Class: 114
-      Script: {instanceID: 11444}
+      Script: {instanceID: 11446}
     - Class: 114
-      Script: {instanceID: 11456}
+      Script: {instanceID: 11458}
     - Class: 114
-      Script: {instanceID: 11700}
+      Script: {instanceID: 11702}
     - Class: 114
-      Script: {instanceID: 11792}
+      Script: {instanceID: 11794}
     - Class: 114
-      Script: {instanceID: 12180}
+      Script: {instanceID: 12184}
     - Class: 114
-      Script: {instanceID: 12326}
+      Script: {instanceID: 12332}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -160,19 +160,19 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 10632}
     - Class: 114
-      Script: {instanceID: 11152}
+      Script: {instanceID: 11154}
     - Class: 114
-      Script: {instanceID: 11444}
+      Script: {instanceID: 11446}
     - Class: 114
-      Script: {instanceID: 11464}
+      Script: {instanceID: 11466}
     - Class: 114
-      Script: {instanceID: 11700}
+      Script: {instanceID: 11702}
     - Class: 114
-      Script: {instanceID: 11792}
+      Script: {instanceID: 11794}
     - Class: 114
-      Script: {instanceID: 12030}
+      Script: {instanceID: 12034}
     - Class: 114
-      Script: {instanceID: 12326}
+      Script: {instanceID: 12332}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -198,11 +198,27 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 21
       Script: {instanceID: 0}
+    - Class: 23
+      Script: {instanceID: 0}
     - Class: 28
+      Script: {instanceID: 0}
+    - Class: 33
+      Script: {instanceID: 0}
+    - Class: 43
       Script: {instanceID: 0}
     - Class: 48
       Script: {instanceID: 0}
+    - Class: 54
+      Script: {instanceID: 0}
+    - Class: 64
+      Script: {instanceID: 0}
+    - Class: 65
+      Script: {instanceID: 0}
     - Class: 81
+      Script: {instanceID: 0}
+    - Class: 82
+      Script: {instanceID: 0}
+    - Class: 83
       Script: {instanceID: 0}
     - Class: 104
       Script: {instanceID: 0}
@@ -213,22 +229,24 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 10028}
     - Class: 114
-      Script: {instanceID: 10556}
-    - Class: 114
       Script: {instanceID: 10594}
     - Class: 114
-      Script: {instanceID: 11152}
+      Script: {instanceID: 10940}
     - Class: 114
-      Script: {instanceID: 11444}
+      Script: {instanceID: 11266}
     - Class: 114
-      Script: {instanceID: 11700}
+      Script: {instanceID: 11446}
     - Class: 114
-      Script: {instanceID: 11792}
+      Script: {instanceID: 11702}
     - Class: 114
-      Script: {instanceID: 12326}
+      Script: {instanceID: 11794}
+    - Class: 114
+      Script: {instanceID: 12332}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
+      Script: {instanceID: 0}
+    - Class: 136
       Script: {instanceID: 0}
     - Class: 157
       Script: {instanceID: 0}
@@ -721,4 +739,4 @@ ScriptsOnlyBuild:
   - Assets/Scenes/Level1.unity
   - Assets/Scenes/Win.unity
   playerPath: C:/Users/HornBeef/UnityProjects/scary game prototype/Builds/prototype
-    v0.031/PhoboSynthesis.exe
+    v0.04/PhoboSynthesis.exe
